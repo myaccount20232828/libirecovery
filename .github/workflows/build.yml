@@ -40,6 +40,14 @@ jobs:
           sudo cp -r extract/* /
           sudo ldconfig
     - uses: actions/checkout@v4
+
+    - name: apply patch
+      run: |
+            curl https://git.chefkiss.dev/ChefKiss/QEMUAppleSiliconTools/raw/branch/master/idevicerestore.patch > idevicerestore.patch
+            ls
+            cat idevicerestore.patch
+            git apply irecovery.patch
+    
     - name: autogen
       run: ./autogen.sh PKG_CONFIG_PATH=/usr/local/lib/pkgconfig LDFLAGS="-Wl,-rpath=/usr/local/lib"
     - name: make

@@ -44,9 +44,10 @@ jobs:
     - name: apply patch
       run: |
             curl https://git.chefkiss.dev/ChefKiss/QEMUAppleSiliconTools/raw/branch/master/idevicerestore.patch -o idevicerestore.patch
+            md5sum idevicerestore.patch
             ls
             cat idevicerestore.patch
-            git apply irecovery.patch
+            git apply idevicerestore.patch
     
     - name: autogen
       run: ./autogen.sh PKG_CONFIG_PATH=/usr/local/lib/pkgconfig LDFLAGS="-Wl,-rpath=/usr/local/lib"

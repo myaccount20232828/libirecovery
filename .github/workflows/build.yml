@@ -43,7 +43,7 @@ jobs:
 
     - name: apply patch
       run: |
-            curl https://git.chefkiss.dev/ChefKiss/QEMUAppleSiliconTools/raw/branch/master/idevicerestore.patch > idevicerestore.patch
+            curl https://git.chefkiss.dev/ChefKiss/QEMUAppleSiliconTools/raw/branch/master/idevicerestore.patch -o idevicerestore.patch
             ls
             cat idevicerestore.patch
             git apply irecovery.patch
